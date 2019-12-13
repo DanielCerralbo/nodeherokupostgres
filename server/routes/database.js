@@ -1,8 +1,8 @@
-require('../config/config');
+const config = require('../config/config');
 const { Pool } = require('pg');
 const pool = new Pool({
   connectionString: process.env.URLDB,
-  ssl: isProduction,
+  ssl: config.isProduction,
 });
 
 module.exports = { 
